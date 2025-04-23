@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Verbesserte Textdarstellung */
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-size: 16px;
+  }
+  
+  @media (max-width: 768px) {
+    html {
+      font-size: 14px;
+    }
+  }
+  
+  body {
+    @apply text-gray-900;
+  }
+  
+  /* Schärfere Schriftdarstellung für wichtige Überschriften */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+/* Verbesserte Übergänge und Animationen */
+@layer utilities {
+  .transition-smooth {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Mobile Optimierungen */
+  @media (max-width: 768px) {
+    .mobile-text {
+      @apply text-mobile-text leading-relaxed;
+    }
+    
+    .mobile-heading {
+      @apply text-mobile-heading font-bold tracking-tight;
+    }
+  }
+}
+
+/* Verbesserte Textschärfe für mobile Geräte */
+@media (max-width: 768px) {
+  .text-sharp {
+    text-shadow: 0 0 1px transparent;
+  }
+}
